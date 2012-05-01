@@ -1,0 +1,21 @@
+# This is the config file for the Twitter it-bot script
+
+# Feed and cache file
+feed: 'http://yoursite.com/feed.xml'
+cache_file: 'tweet_times.yaml'
+
+# Twitter
+consumer_key: 'YourConsumerKey'
+consumer_secret: 'YourConsumerSecret'
+oauth_token: 'YourOAuthToken'
+oauth_token_secret: 'YourOAuthTokenSecret'
+
+# Mail
+recipient_name: 'YourName'
+recipient_mail: 'you@yoursite.com'
+from_name: 'ScriptsName'
+from_mail: 'script@yoursite.com'
+smtp_server: 'smtp.gmail.com'
+smtp_port: '587'
+smtp_user: 'script@yoursite.com'
+smtp_password: 'ScriptsPassword'
