@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
 
 # This script takes information from an RSS feed and posts it as updates to
 # Twitter. If you have a website or blog, you can just run this script every
@@ -66,11 +67,13 @@ p tweet_times[feed]
         client.update(text)
 
         # Notify me via mail that the post was tweeted
-        message = "Hi #{CONFIG['recipient_name']}, \n\n I just tweeted the following tweet: \n\n" + text.to_s + ". \n\n Best, \n\n #{CONFIG['from_name']}"
-        subject = "New Tweet tweeted: " + i.title.to_s
+        message = "Hi #{CONFIG['recipient_name']}, \n\n I just tweeted the following tweet: \n\n" + text.to_s.force_encoding("utf-8") + ". \n\n Best, \n\n #{CONFIG['from_name']}"
+        subject = "New Tweet tweeted: " + i.title.to_s.force_encoding("utf-8")
         # Pony configuration for googlemail, reads almost all values from
         # config.yml
         Pony.mail({
+            :charset => "UTF-8",
+            :text_part_charset => "UTF-8",
             :to => CONFIG['recipient_mail'],
             :from => CONFIG['from_mail'],
             :subject => subject,
