@@ -1,14 +1,19 @@
 # This is the config file for the Twitter it-bot script
 
-# Feed and cache file
+# Feed and cache files
 feed: 'http://yoursite.com/feed.xml'
 cache_file: 'tweet_times.yaml'
+mastodon_cache_file: 'toot_times.yaml'
 
 # Twitter
 consumer_key: 'YourConsumerKey'
 consumer_secret: 'YourConsumerSecret'
 oauth_token: 'YourOAuthToken'
 oauth_token_secret: 'YourOAuthTokenSecret'
+
+# Mastodon
+mastodon_base_url: 'https://mastodon.example'
+mastodon_bearer_token: 'YourMastodonBearerToken'
 
 # Mail
 recipient_name: 'YourName'
