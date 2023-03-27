@@ -33,10 +33,7 @@ toot_times_file = @script_dir + "/" + CONFIG['mastodon_cache_file']
 
 # Configure my OAuth for Mastodon  authentification, the actual token lives in
 # config.yml
-client = Mastodon::REST::Client.new do |config|
-  config.mastodon_base_url     = CONFIG['mastodon_base_url']
-  config.mastodon_bearer_token = CONFIG['mastodon_bearer_token']
-end
+client = Mastodon::REST::Client.new(base_url: CONFIG['mastodon_base_url'], bearer_token: CONFIG['mastodon_bearer_token'])
 
 # If the toot_times file exists, load the content from the yaml into a hash
 # else create a new one and date it on 1970.
